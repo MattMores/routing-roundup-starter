@@ -2,11 +2,12 @@
   "name": "routing-roundup-starter",
   "version": "1.0.0",
   "description": "A starter project to let you practice routing with Express applications.",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "start": "nodemon app.js",
     "test": "mocha"
   },
   "repository": {
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/appacademy-starters/routing-roundup-starter#readme",
   "dependencies": {
-    "mocha": "^7.1.1"
+    "express": "^4.17.1",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.7",
+    "pug": "^2.0.4"
   }
 }
