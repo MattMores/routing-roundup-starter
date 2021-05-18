@@ -1,9 +1,14 @@
 //EXPRESS TEMPLATE
 const express = require('express');
+const routes = require('./routes')
 
 // Create the Express app.
 const app = express();
+
 app.set('view engine', 'pug');
+
+app.use('/margot', routes);
+app.use('/margeaux', routes);
 
 app.get('/', (req, res) => {
   // console.log(req)
@@ -23,9 +28,10 @@ app.get('/capital-letters/:word', (req, res) => {
   const upperCase = req.params.word.toUpperCase()
   res.send(`${upperCase}`)
 });
-app.all('/about', (req, res) => {
 
-  res.render('layout', { method: req.method, path: req.path, randomNum: Math.random() * 100 });
+app.all('/:id', (req, res) => {
+
+  res.render('template', { method: req.method, path: req.path, randomNum: Math.random() * 100 });
 })
 
 const port = 8081;
